@@ -1,10 +1,17 @@
+import Logo from "../logo.png";
+
 function Header() {
   return (
     <header className="py-4">
-      <nav className="w-5/6 mx-auto">
-        <h1 className="text-rose-500 text-3xl font-black tracking-wider">
-          sampleapp
-        </h1>
+      <nav className="w-5/6 mx-auto text-center">
+        <a href="/">
+          <img
+            src={Logo}
+            alt="World of Cryptopups"
+            className="mx-auto h-32 w-auto"
+          />
+        </a>
+        <h1 className="text-white text-3xl font-black">Collection Packs</h1>
       </nav>
     </header>
   );

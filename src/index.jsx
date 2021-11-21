@@ -1,14 +1,14 @@
+import { WaxAuthProvider } from "@cryptopuppie/solid-waxauth";
 import { render } from "solid-js/web";
-
-import "./index.css";
 import App from "./App";
-import TodoProvider from "./modules/Provider";
+import "./index.css";
+import { chainId, dApp, endpoint } from "./lib/waxnet";
 
 render(
   () => (
-    <TodoProvider>
+    <WaxAuthProvider net={{ endpoint, chainId, dApp }}>
       <App />
-    </TodoProvider>
+    </WaxAuthProvider>
   ),
   document.getElementById("root")
 );

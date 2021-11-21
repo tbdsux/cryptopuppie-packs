@@ -11,7 +11,9 @@ function Header() {
             className="mx-auto h-32 w-auto"
           />
         </a>
-        <h1 className="text-white text-3xl font-black">Collection Packs</h1>
+        <h1 className="text-gray-200 text-3xl font-black uppercase bg-warmGray-800 py-2 rounded-lg">
+          Collection Packs
+        </h1>
       </nav>
     </header>
   );

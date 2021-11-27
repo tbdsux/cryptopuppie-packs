@@ -16,7 +16,7 @@ module.exports = {
 
     // NOTE: Add the lines below if you want to add a google font
     fontFamily: {
-      sans: ['"Barlow"', ...defaultTheme.fontFamily.sans],
+      sans: ['"Montserrat"', ...defaultTheme.fontFamily.sans],
     },
     extend: {},
   },

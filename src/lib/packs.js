@@ -2,8 +2,8 @@ import { collection } from "./waxnet";
 
 const fetchPacks = async (account) => {
   const r = await fetch(
-    `https://kv5z3m.deta.dev/?collection=${collection}&account=${account}&pack_templates=${
-      import.meta.env.VITE_PACKTEMPLATES
+    `https://kv5z3m.deta.dev/?collection=${collection}&account=${account}&schema_pack=${
+      import.meta.env.VITE_SCHEMAPACKS
     }`
   );
 

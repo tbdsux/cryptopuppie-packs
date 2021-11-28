@@ -1,9 +1,11 @@
 import { createResource, For } from "solid-js";
+import { useClaim } from "../../components/ClaimProvider";
 import { fetchTemplateAssets } from "../../lib/assets";
 import ListAsset from "./ListAsset";
 
-function PackModalAssets(props) {
-  const [tempassets] = createResource(props.templates, fetchTemplateAssets);
+function PackModalAssets() {
+  const { templates } = useClaim();
+  const [tempassets] = createResource(templates, fetchTemplateAssets);
 
   return (
     <div className="mt-6">

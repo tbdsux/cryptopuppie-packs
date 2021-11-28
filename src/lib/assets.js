@@ -13,6 +13,8 @@ const fetchClaimAssets = async (scope) => {
 };
 
 const fetchTemplateAssets = async (templates) => {
+  if (templates === "") return;
+
   const r = await fetch(
     `${atomicassets}/atomicassets/v1/templates?collection_name=${collection}&ids=${templates}&page=1&limit=1000&order=desc&sort=created`
   );

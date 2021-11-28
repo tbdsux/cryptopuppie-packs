@@ -1,5 +1,5 @@
 import { useWaxAuth } from "@cryptopuppie/solid-waxauth";
-import { createSignal, Show } from "solid-js";
+import { createEffect, createSignal, Show } from "solid-js";
 import PackModal from "./PackModal";
 
 function OpenModal(props) {
@@ -9,6 +9,15 @@ function OpenModal(props) {
   } = useWaxAuth();
 
   const [open, setOpen] = createSignal(false);
+  const [done, setDone] = createSignal(false);
+
+  createEffect(() => {
+    if (done()) {
+      props.refetchPacks();
+
+      setDone(false);
+    }
+  });
 
   return (
     <div className="h-full w-full flex items-center justify-center">
@@ -56,7 +65,13 @@ function OpenModal(props) {
           </button>
         }
       >
-        <PackModal {...props} closeModal={() => setOpen(false)} />
+        <PackModal
+          {...props}
+          closeModal={() => {
+            setDone(true);
+            setOpen(false);
+          }}
+        />
       </Show>
     </div>
   );

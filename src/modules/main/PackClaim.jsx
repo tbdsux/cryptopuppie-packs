@@ -1,16 +1,19 @@
 import { useWaxAuth } from "@cryptopuppie/solid-waxauth";
+import { useClaim } from "../../components/ClaimProvider";
 
-function PackClaim(props) {
+function PackClaim() {
   const {
     state: { user },
     getSession,
   } = useWaxAuth();
+  const { props: claimprops, claimed, setClaimed, assets } = useClaim();
 
   const claimAssets = async () => {
     const session = await getSession(user);
     if (!session) return;
 
-    const { asset_id, origins } = props;
+    const { asset_id } = claimprops;
+    const origins = assets().map((r) => r.origin_roll_id);
 
     session
       .transact({
@@ -32,7 +35,7 @@ function PackClaim(props) {
         ],
       })
       .then((r) => {
-        props.setClaimed();
+        setClaimed(true);
       })
       .catch((e) => console.error(e));
   };
@@ -40,11 +43,11 @@ function PackClaim(props) {
   return (
     <div className="text-center mt-8">
       <button
-        disabled={props.claimed()}
+        disabled={claimed()}
         className="bg-warmGray-500 hover:bg-warmGray-600 text-white py-2 px-8 rounded-lg"
         onClick={claimAssets}
       >
-        {props.claimed() ? "Claimed" : "Claim"}
+        {claimed() ? "Claimed" : "Claim"}
       </button>
     </div>
   );

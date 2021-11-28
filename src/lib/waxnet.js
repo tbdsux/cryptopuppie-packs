@@ -1,7 +1,7 @@
 const endpoint = import.meta.env.VITE_WAXNET ?? "";
 const chainId = import.meta.env.VITE_WAXCHAIN ?? "";
 const dApp = "packs.cryptopuppie";
-const isTestnet = Boolean(import.meta.env.VITE_ISTESTNET);
+const isTestnet = (import.meta.env.VITE_ISTESTNET ?? "") === "true";
 const atomicassets = import.meta.env.VITE_ATOMICASSETS_API ?? "";
 const collection = import.meta.env.VITE_COLLECTION ?? "";
 

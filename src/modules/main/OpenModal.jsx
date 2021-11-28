@@ -27,6 +27,11 @@ function OpenModal(props) {
           <button
             title="Open this pack"
             onClick={async () => {
+              if (props.claim) {
+                setOpen(true);
+                return;
+              }
+
               const session = await getSession(user);
               if (!session) return;
 
@@ -61,7 +66,7 @@ function OpenModal(props) {
             }}
             className="bg-coolGray-600 hover:bg-coolGray-700 text-white py-2 px-6 rounded-lg text-sm"
           >
-            open
+            {props.claim ? "claim" : "open"}
           </button>
         }
       >

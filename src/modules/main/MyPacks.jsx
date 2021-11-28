@@ -1,6 +1,6 @@
 import { useWaxAuth } from "@cryptopuppie/solid-waxauth";
 import ListPacks from "./ListPacks";
-import Unclaims from "./Unclaims";
+import ListUnclaims from "./ListUnclaims";
 
 function MyPacks() {
   const { state } = useWaxAuth();
@@ -8,7 +8,7 @@ function MyPacks() {
   return (
     <div className="">
       <div className="flex items-center justify-between">
-        <h3 className="text-2xl font-black underline text-gray-300">
+        <h3 className="text-3xl font-black underline text-gray-300">
           My Packs
         </h3>
 
@@ -21,8 +21,10 @@ function MyPacks() {
         <ListPacks />
       </div>
 
+      <hr className="my-4 border-warmGray-700" />
+
       <div>
-        <Unclaims />
+        <ListUnclaims />
       </div>
     </div>
   );

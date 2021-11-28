@@ -1,4 +1,5 @@
 import { useWaxAuth } from "@cryptopuppie/solid-waxauth";
+import { Show } from "solid-js";
 import { useClaim } from "../../components/ClaimProvider";
 
 function PackClaim() {
@@ -42,13 +43,15 @@ function PackClaim() {
 
   return (
     <div className="text-center mt-8">
-      <button
-        disabled={claimed()}
-        className="bg-warmGray-500 hover:bg-warmGray-600 text-white py-2 px-8 rounded-lg"
-        onClick={claimAssets}
-      >
-        {claimed() ? "Claimed" : "Claim"}
-      </button>
+      <Show when={assets()?.length > 0}>
+        <button
+          disabled={claimed()}
+          className="bg-warmGray-500 hover:bg-warmGray-600 text-white py-2 px-8 rounded-lg"
+          onClick={claimAssets}
+        >
+          {claimed() ? "CLAIMED" : "Claim"}
+        </button>
+      </Show>
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import { useWaxAuth } from "@cryptopuppie/solid-waxauth";
+import ListPacks from "./ListPacks";
+import Unclaims from "./Unclaims";
 
 function MyPacks() {
   const { state } = useWaxAuth();
@@ -15,7 +17,13 @@ function MyPacks() {
         </p>
       </div>
 
-      <div></div>
+      <div>
+        <ListPacks />
+      </div>
+
+      <div>
+        <Unclaims />
+      </div>
     </div>
   );
 }

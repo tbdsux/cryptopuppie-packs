@@ -1,8 +1,8 @@
-import { collection } from "./waxnet";
+import { api, collection } from "./waxnet";
 
 const fetchPacks = async (account) => {
   const r = await fetch(
-    `https://kv5z3m.deta.dev/?collection=${collection}&account=${account}&schema_pack=${
+    `${api}/?collection=${collection}&account=${account}&schema_pack=${
       import.meta.env.VITE_SCHEMAPACKS
     }`
   );
@@ -12,7 +12,7 @@ const fetchPacks = async (account) => {
 
 const fetchClaims = async (account) => {
   const r = await fetch(
-    `https://kv5z3m.deta.dev/unclaims?collection=${collection}&account=${account}`
+    `${api}/unclaims?collection=${collection}&account=${account}`
   );
 
   return await r.json();

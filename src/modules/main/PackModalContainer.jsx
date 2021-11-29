@@ -18,7 +18,7 @@ function PackModalContainer() {
         }}
       ></div>
 
-      <div className="z-50 bg-warmGray-100 w-full max-w-xl px-8 py-6 rounded-lg">
+      <div className="z-50 bg-warmGray-100 w-full max-w-xl lg:max-w-4xl px-8 py-6 rounded-lg">
         <h3 className="text-2xl font-black tracking-wide">Claim Assets</h3>
         <p className="mt-2 text-sm">
           Claim the assets from your pack. Unclaimed assets will be show below

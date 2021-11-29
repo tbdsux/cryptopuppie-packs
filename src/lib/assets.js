@@ -1,10 +1,10 @@
-import { atomicassets, collection } from "./waxnet";
+import { api, atomicassets, collection } from "./waxnet";
 
 const fetchClaimAssets = async (scope) => {
   let x = [];
 
   while (x.length === 0) {
-    const r = await fetch(`https://kv5z3m.deta.dev/claimassets?scope=${scope}`);
+    const r = await fetch(`${api}/claimassets?scope=${scope}`);
 
     x = await r.json();
   }

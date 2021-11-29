@@ -9,7 +9,7 @@ function PackModalAssets() {
 
   return (
     <div className="mt-6">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
         <For each={tempassets()} fallback={<p>Loading...</p>}>
           {(item) => <ListAsset {...item} />}
         </For>

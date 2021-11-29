@@ -8,10 +8,10 @@ function Header() {
           <img
             src={Logo}
             alt="World of Cryptopups"
-            className="mx-auto h-32 w-auto"
+            className="mx-auto h-32 w-auto object-contain"
           />
         </a>
-        <h1 className="text-gray-200 text-3xl font-black uppercase bg-warmGray-800 py-2 rounded-lg">
+        <h1 className="text-gray-200 text-2xl md:text-3xl font-black uppercase bg-warmGray-800 py-2 rounded-lg">
           Collection Packs
         </h1>
       </nav>

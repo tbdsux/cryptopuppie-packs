@@ -7,12 +7,12 @@ function MyPacks() {
 
   return (
     <div className="">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <h3 className="text-3xl font-black underline text-gray-300">
           My Packs
         </h3>
 
-        <p className="font-bold tracking-wide text-white">
+        <p className="font-bold tracking-wide text-white m-1">
           @{state.user.wallet}
         </p>
       </div>

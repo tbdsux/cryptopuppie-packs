@@ -12,12 +12,12 @@ function WalletLogin() {
         Login with Your Wallet
       </h3>
 
-      <div className="mt-6 inline-flex items-center">
+      <div className="mt-6 inline-flex items-center justify-center flex-wrap">
         {!isTestnet && (
           <button
             onClick={loginWithCloudWalet}
             type="button"
-            className="mx-1 py-3 px-8 rounded-md bg-gray-500 hover:bg-gray-600 text-gray-100 font-bold"
+            className="m-1 py-3 px-8 rounded-md bg-gray-500 hover:bg-gray-600 text-gray-100 font-bold"
           >
             With Wax Cloud Wallet
           </button>
@@ -26,7 +26,7 @@ function WalletLogin() {
         <button
           onClick={loginWithAnchor}
           type="button"
-          className="mx-1 py-3 px-8 rounded-md bg-blue-500 hover:bg-blue-600 text-gray-100 font-bold"
+          className="m-1 py-3 px-8 rounded-md bg-blue-500 hover:bg-blue-600 text-gray-100 font-bold"
         >
           With Anchor
         </button>

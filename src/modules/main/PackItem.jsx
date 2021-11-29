@@ -2,7 +2,7 @@ import OpenModal from "./OpenModal";
 
 function PackItem(props) {
   return (
-    <div className="bg-warmGray-800 rounded-lg relative group">
+    <div className="text-center bg-warmGray-800 rounded-lg relative group">
       <div className="bg-black/10 h-full w-full absolute rounded-lg hidden group-hover:block">
         <OpenModal {...props} />
       </div>
@@ -13,10 +13,10 @@ function PackItem(props) {
 
       <img
         src={`https://ipfs.io/ipfs/${props.data.img}`}
-        className="h-56 object-contain"
+        className="h-56 object-contain mx-auto"
       />
 
-      <p className="text-center text-gray-200 py-4">
+      <p className="text-gray-200 py-4">
         <strong className="font-black tracking-wide text-lg">
           {props.data.name}
         </strong>

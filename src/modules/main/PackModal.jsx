@@ -6,7 +6,7 @@ function PackModal(props) {
   return (
     <Portal>
       <ClaimProvider {...props}>
-        <div className="fixed w-full h-full bg-black/60 z-50 inset-0 flex items-center justify-center">
+        <div className="fixed w-full h-full bg-black/60 z-50 inset-0 flex items-center justify-center overflow-auto">
           <PackModalContainer />
         </div>
       </ClaimProvider>

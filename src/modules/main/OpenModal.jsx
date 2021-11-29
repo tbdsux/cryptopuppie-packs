@@ -36,27 +36,37 @@ function OpenModal(props) {
               if (!session) return;
 
               session
-                .transact({
-                  actions: [
-                    {
-                      account: "atomicassets",
-                      name: "transfer",
-                      authorization: [
-                        {
-                          actor: user.wallet,
-                          permission:
-                            user.type === "anchor" ? user.permission : "active",
+                .transact(
+                  {
+                    actions: [
+                      {
+                        account: "atomicassets",
+                        name: "transfer",
+                        authorization: [
+                          {
+                            actor: user.wallet,
+                            permission:
+                              user.type === "anchor"
+                                ? user.permission
+                                : "active",
+                          },
+                        ],
+                        data: {
+                          from: user.wallet,
+                          to: "atomicpacksx",
+                          asset_ids: [props.asset_id],
+                          memo: "unbox",
                         },
-                      ],
-                      data: {
-                        from: user.wallet,
-                        to: "atomicpacksx",
-                        asset_ids: [props.asset_id],
-                        memo: "unbox",
                       },
-                    },
-                  ],
-                })
+                    ],
+                  },
+                  user.type === "wax-cloud-wallet"
+                    ? {
+                        blocksBehind: 3,
+                        expireSeconds: 1200,
+                      }
+                    : null
+                )
                 .then((r) => {
                   setOpen(true);
                 })

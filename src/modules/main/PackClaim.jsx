@@ -17,24 +17,33 @@ function PackClaim() {
     const origins = assets().map((r) => r.origin_roll_id);
 
     session
-      .transact({
-        actions: [
-          {
-            account: "atomicpacksx",
-            name: "claimunboxed",
-            authorization: [
-              {
-                actor: user.wallet,
-                permission: user.type === "anchor" ? user.permission : "active",
+      .transact(
+        {
+          actions: [
+            {
+              account: "atomicpacksx",
+              name: "claimunboxed",
+              authorization: [
+                {
+                  actor: user.wallet,
+                  permission:
+                    user.type === "anchor" ? user.permission : "active",
+                },
+              ],
+              data: {
+                pack_asset_id: Number(asset_id),
+                origin_roll_ids: origins,
               },
-            ],
-            data: {
-              pack_asset_id: Number(asset_id),
-              origin_roll_ids: origins,
             },
-          },
-        ],
-      })
+          ],
+        },
+        user.type === "wax-cloud-wallet"
+          ? {
+              blocksBehind: 3,
+              expireSeconds: 1200,
+            }
+          : null
+      )
       .then((r) => {
         setClaimed(true);
       })

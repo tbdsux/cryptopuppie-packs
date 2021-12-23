@@ -55,7 +55,7 @@ function PackClaim() {
       <Show when={assets()?.length > 0}>
         <button
           disabled={claimed()}
-          className="bg-warmGray-500 hover:bg-warmGray-600 text-white py-2 px-8 rounded-lg"
+          className="bg-stone-500 hover:bg-stone-600 text-white py-2 px-8 rounded-lg"
           onClick={claimAssets}
         >
           {claimed() ? "CLAIMED" : "Claim"}

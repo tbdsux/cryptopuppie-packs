@@ -11,12 +11,12 @@ function MyPacks() {
   return (
     <div className="">
       <div className="flex items-center justify-between flex-wrap">
-        <h3 className="text-3xl font-black underline text-gray-100">
+        <h3 className="text-3xl font-black underline text-neutral-100">
           My Packs
         </h3>
 
         <div className="text-right m-1">
-          <p className="text-lg font-bold tracking-wide text-warmGray-300">
+          <p className="text-lg font-bold tracking-wide text-stone-300">
             @{state.user?.wallet}
           </p>
 
@@ -24,7 +24,7 @@ function MyPacks() {
             <button
               title="Logout account"
               onClick={logout}
-              className="text-warmGray-500 hover:underline"
+              className="text-stone-500 hover:underline"
               type="button"
             >
               logout
@@ -37,7 +37,7 @@ function MyPacks() {
         <ListPacks />
       </div>
 
-      <hr className="my-4 border-warmGray-700" />
+      <hr className="my-4 border-stone-700" />
 
       <div>
         <ListUnclaims />

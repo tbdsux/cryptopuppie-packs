@@ -3,9 +3,8 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   // NOTE: configure this if you have another folder with tsx files or (that uses stylinggs)
-  purge: ["./src/**/*.jsx"],
+  content: ["./src/**/*.jsx"],
   mode: "jit",
-  darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       // theme colors

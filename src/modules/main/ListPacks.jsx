@@ -16,7 +16,7 @@ function ListPacks() {
 
       <div>
         {packs()?.length === 0 ? (
-          <p className="text-warmGray-300">
+          <p className="text-stone-300">
             You have no packs yet from our collection...
           </p>
         ) : (

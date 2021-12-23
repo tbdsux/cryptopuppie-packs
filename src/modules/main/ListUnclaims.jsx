@@ -12,14 +12,14 @@ function ListUnclaims() {
 
   return (
     <div className="my-16">
-      <h3 className="mb-4 text-2xl font-black text-gray-200">My Unclaims</h3>
+      <h3 className="mb-4 text-2xl font-black text-neutral-200">My Unclaims</h3>
 
       <div>
         {packs.loading && <p className="text-white">Loading...</p>}
 
         <div>
           {packs()?.length === 0 ? (
-            <p className="text-warmGray-300">
+            <p className="text-stone-300">
               Great! You have no unclaimed packs.
             </p>
           ) : (

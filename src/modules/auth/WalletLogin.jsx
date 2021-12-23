@@ -8,7 +8,7 @@ function WalletLogin() {
 
   return (
     <div className="text-center">
-      <h3 className="text-2xl font-black underline text-gray-300">
+      <h3 className="text-2xl font-black underline text-neutral-300">
         Login with Your Wallet
       </h3>
 
@@ -17,7 +17,7 @@ function WalletLogin() {
           <button
             onClick={loginWithCloudWalet}
             type="button"
-            className="m-1 py-3 px-8 rounded-md bg-gray-500 hover:bg-gray-600 text-gray-100 font-bold"
+            className="m-1 py-3 px-8 rounded-md bg-neutral-500 hover:bg-neutral-600 text-neutral-100 font-bold"
           >
             With Wax Cloud Wallet
           </button>
@@ -26,7 +26,7 @@ function WalletLogin() {
         <button
           onClick={loginWithAnchor}
           type="button"
-          className="m-1 py-3 px-8 rounded-md bg-blue-500 hover:bg-blue-600 text-gray-100 font-bold"
+          className="m-1 py-3 px-8 rounded-md bg-blue-500 hover:bg-blue-600 text-neutral-100 font-bold"
         >
           With Anchor
         </button>

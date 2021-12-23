@@ -74,7 +74,7 @@ function OpenModal(props) {
                   console.error(e);
                 });
             }}
-            className="bg-coolGray-600 hover:bg-coolGray-700 text-white py-2 px-6 rounded-lg text-sm"
+            className="bg-gray-600 hover:bg-gray-700 text-white py-2 px-6 rounded-lg text-sm"
           >
             {props.claim ? "claim" : "open"}
           </button>

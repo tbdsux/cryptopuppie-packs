@@ -17,10 +17,18 @@ function ListUnclaims() {
       <div>
         {packs.loading && <p className="text-white">Loading...</p>}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-6 xl:gap-8">
-          <For each={packs()}>
-            {(item) => <PackItem {...item} refetchPacks={refetch} claim />}
-          </For>
+        <div>
+          {packs()?.length === 0 ? (
+            <p className="text-warmGray-300">
+              Great! You have no unclaimed packs.
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-6 xl:gap-8">
+              <For each={packs()}>
+                {(item) => <PackItem {...item} refetchPacks={refetch} claim />}
+              </For>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -3,7 +3,10 @@ import ListPacks from "./ListPacks";
 import ListUnclaims from "./ListUnclaims";
 
 function MyPacks() {
-  const { state } = useWaxAuth();
+  const {
+    state,
+    functions: { logout },
+  } = useWaxAuth();
 
   return (
     <div className="">
@@ -12,9 +15,22 @@ function MyPacks() {
           My Packs
         </h3>
 
-        <p className="font-bold tracking-wide text-white m-1">
-          @{state.user.wallet}
-        </p>
+        <div className="text-right m-1">
+          <p className="text-lg font-bold tracking-wide text-white">
+            @{state.user?.wallet}
+          </p>
+
+          <small>
+            <button
+              title="Logout account"
+              onClick={logout}
+              className="text-warmGray-500 hover:underline"
+              type="button"
+            >
+              logout
+            </button>
+          </small>
+        </div>
       </div>
 
       <div>

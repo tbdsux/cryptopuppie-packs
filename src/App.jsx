@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Container from "./modules/Container";
 
@@ -8,6 +9,8 @@ function App() {
         <Header />
 
         <Container />
+
+        <Footer />
       </div>
     </div>
   );

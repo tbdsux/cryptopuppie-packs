@@ -7,7 +7,7 @@ function WalletLogin() {
   } = useWaxAuth();
 
   return (
-    <div className="text-center">
+    <div className="text-center my-20">
       <h3 className="text-2xl font-black underline text-neutral-300">
         Login with Your Wallet
       </h3>
